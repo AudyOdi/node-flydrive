@@ -21,7 +21,8 @@ const proxyHandler = {
     const path = pathMap[name]
 
     if (path === undefined) {
-      throw CE.DriverNotSupported.driver(name)
+      // throw CE.DriverNotSupported.driver(name)
+      return require(pathMap['local'])
     }
 
     /* eslint-disable global-require, import/no-dynamic-require */
